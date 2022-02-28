@@ -3,7 +3,7 @@ import { BikePoint } from './BikePoint';
 
 export const Results = ({ results, query }) => {
   if (Array.isArray(results) && !results.length) {
-	return <p>No results found for '{query}'</p>;
+	return <p>No bike points found for '{query}'</p>;
   }
 
   return (

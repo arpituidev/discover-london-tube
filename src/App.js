@@ -18,10 +18,13 @@ function App() {
         function compare( a, b ) {
           return a.modeName.localeCompare(b.modeName) || b.name - a.name;
         }
-
-        setTlfData(result.sort(compare))
+        if(tlfData.length) {
+          setTlfData(result.sort(compare))
+        }
       })
-      .catch(error => error);
+      .catch(error => {
+          console.log(error.error);
+        });
   }, [])
 
   const onLineClick = (e) => {
@@ -64,7 +67,7 @@ function App() {
                 </a>
             })
           }
-          <a title={`click here for searching bike points`} onClick={onCycleHire}><span className="underground-line">Cycle Hire</span><i class="fa fa-search"></i></a>
+          <a title={`click here for searching bike points`} onClick={onCycleHire}><span className="underground-line">Cycle Hire</span><i className="fa fa-search"></i></a>
         </nav>
       </aside>
       <div className='container'> 
