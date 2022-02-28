@@ -18,9 +18,8 @@ function App() {
         function compare( a, b ) {
           return a.modeName.localeCompare(b.modeName) || b.name - a.name;
         }
-        if(tlfData.length) {
-          setTlfData(result.sort(compare))
-        }
+        
+        setTlfData(result.sort(compare))
       })
       .catch(error => {
           console.log(error.error);
@@ -49,6 +48,8 @@ function App() {
         <nav>
           {
             tlfData && tlfData.map((data, id) => {
+
+              console.log({tlfData})
               const isServiceTypeNight = data.serviceTypes.some(type => type.name === 'Night') ? 'fa fa-moon-o' : '';
 
               const statusSeverity = data.lineStatuses.every(status => status.statusSeverity === 10);
