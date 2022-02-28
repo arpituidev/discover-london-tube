@@ -1,38 +1,113 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* text-align: center; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: start;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+--primary-color: #D96AA7;
+--secondary-color: #000040;
+--complimentary-color: #88BFB5;
+--contrast-color: #F2E527;
+--light-color: #D2A9D9;
+}
+
+.container {
+  background: #fff;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  overflow: hidden;
+  width: 80%;
+  position: relative;
+  background-image: linear-gradient(to right, #5e42a6, #3d3358);
+  color: #fff;
+}
+
+nav a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 8px 15px -8px black;
+}
+
+nav {
+    position: relative;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(137deg,#7939cb 0,#409 20%,#00006a 66%,#000040 100%);
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.underground-line {
+  cursor: pointer;
+}
+section {
+  opacity: 1;
+  position: relative;
+  left: 0;
+  height: 100%;
+  margin: 20px;
+  z-index: 10;
+} 
+
+section header {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    position: relative;
+    left: 0;
+    margin: 20px;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+}
+
+.badge {
+  background-color: orangered;
   color: white;
+  padding: 2px 8px;
+  margin: 0 0 0 10px;
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 2px;
+}
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
 }
 
-.App-link {
-  color: #61dafb;
+ul li {
+  list-style-type: none;
+  margin: 10px 0;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #CCC
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa {
+  font-size: 20px;
+  color: yellow;
+  margin-left: 5px;
+}
+
+.bike-location {
+  margin: 10px 10px 10px 0;
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
 }
